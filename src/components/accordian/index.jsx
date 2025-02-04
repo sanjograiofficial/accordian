@@ -8,10 +8,14 @@ const Accordian = () => {
   const [multiple, setMultiple] = useState([]);
   const [button, setButton] = useState("Enable Multi Selection");
 
+  // expands the block if it is closed and vice versa.
   const handleSingleSelect = (getCurrentId) => {
     setSelected(getCurrentId === selected ? null : getCurrentId);
   };
+
+
   const handleMultiSelection = (getCurrentId) => {
+    // copying "multiple" state so that i don't mutate it directly.
     let cpymultiple = [...multiple];
     const findIndex = cpymultiple.indexOf(getCurrentId);
     if (findIndex === -1) cpymultiple.push(getCurrentId);
@@ -21,9 +25,11 @@ const Accordian = () => {
   };
 
   const handleButton = ()=>{
+    // toggles enableMultiSelection
     const multiSelection = !enableMultiSelection
     setEnableMultiSelection(multiSelection)
     
+    // handling button states
     multiSelection ? setButton("Disable Multi Selection") :
     setButton("Enable Multi Selection")    
   }
@@ -33,6 +39,7 @@ const Accordian = () => {
         {button}
       </button>
       <div className="accordian">
+        {/* check if there's any data */}
         {data && data.length > 0 ? (
           data.map((dataItem) => (
             <div className="item">
