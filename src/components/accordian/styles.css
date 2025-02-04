@@ -1,0 +1,21 @@
+body{
+    color: aliceblue;
+}
+
+.item {
+    background-color: #5c5c5cd6;
+    border-radius: 12px;
+    font-size: 1.2rem;
+    margin: 4px;
+    padding: 5px;
+    max-width: 500px;
+}
+.title{
+    font-size: 1.5rem;
+    padding: 3px;
+}
+
+button{
+    background-color: #5c5c5cd6;
+    margin: 4px;
+}
